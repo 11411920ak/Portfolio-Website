@@ -28,7 +28,7 @@ const Contact = () => {
           ease: "power3.out",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 80%",
+            start: "top 95%",
           },
         }
       );
@@ -44,7 +44,7 @@ const Contact = () => {
           ease: "power3.out",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 75%",
+            start: "top 95%",
           },
         }
       );
@@ -60,7 +60,7 @@ const Contact = () => {
           ease: "power3.out",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 75%",
+            start: "top 95%",
           },
         }
       );
