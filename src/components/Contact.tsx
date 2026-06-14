@@ -18,52 +18,65 @@ const Contact = () => {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      gsap.fromTo(
-        headingRef.current,
-        { opacity: 0, y: 50 },
-        {
+      let mm = gsap.matchMedia();
+
+      mm.add("(min-width: 900px)", () => {
+        gsap.fromTo(
+          headingRef.current,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top 80%",
+            },
+          }
+        );
+
+        gsap.fromTo(
+          formBoxRef.current,
+          { opacity: 0, x: -50 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 1,
+            delay: 0.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top 75%",
+            },
+          }
+        );
+
+        gsap.fromTo(
+          infoBoxRef.current,
+          { opacity: 0, x: 50 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 1,
+            delay: 0.4,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top 75%",
+            },
+          }
+        );
+      });
+
+      mm.add("(max-width: 899px)", () => {
+        // On mobile, just make sure they are fully visible immediately
+        gsap.set([headingRef.current, formBoxRef.current, infoBoxRef.current], {
           opacity: 1,
+          x: 0,
           y: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 95%",
-          },
-        }
-      );
-
-      gsap.fromTo(
-        formBoxRef.current,
-        { opacity: 0, x: -50 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1,
-          delay: 0.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 95%",
-          },
-        }
-      );
-
-      gsap.fromTo(
-        infoBoxRef.current,
-        { opacity: 0, x: 50 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1,
-          delay: 0.4,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 95%",
-          },
-        }
-      );
+        });
+      });
     }, sectionRef);
 
     return () => ctx.revert();
