@@ -12,39 +12,43 @@ const Work = () => {
   const workFlexRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    let getScrollAmount = () => {
-      const boxes = document.getElementsByClassName("work-box");
-      const container = document.querySelector(".work-container");
-      if (!boxes.length || !container) return 0;
-      
-      const rectLeft = container.getBoundingClientRect().left;
-      const rect = boxes[0].getBoundingClientRect();
-      const parentWidth = boxes[0].parentElement!.getBoundingClientRect().width;
-      let padding: number = parseInt(window.getComputedStyle(boxes[0]).padding) / 2;
-      
-      let translateX = rect.width * boxes.length - (rectLeft + parentWidth) + padding + (window.innerWidth / 2);
-      return -translateX;
-    };
+    let mm = gsap.matchMedia();
 
-    let tween = gsap.to(workFlexRef.current, {
-      x: getScrollAmount,
-      ease: "none",
+    mm.add("(min-width: 900px)", () => {
+      let getScrollAmount = () => {
+        const boxes = document.getElementsByClassName("work-box");
+        const container = document.querySelector(".work-container");
+        if (!boxes.length || !container) return 0;
+        
+        const rectLeft = container.getBoundingClientRect().left;
+        const rect = boxes[0].getBoundingClientRect();
+        const parentWidth = boxes[0].parentElement!.getBoundingClientRect().width;
+        let padding: number = parseInt(window.getComputedStyle(boxes[0]).padding) / 2;
+        
+        let translateX = rect.width * boxes.length - (rectLeft + parentWidth) + padding + (window.innerWidth / 2);
+        return -translateX;
+      };
+
+      let tween = gsap.to(workFlexRef.current, {
+        x: getScrollAmount,
+        ease: "none",
+      });
+
+      ScrollTrigger.create({
+        trigger: ".work-section",
+        start: "bottom bottom",
+        end: () => `+=${Math.abs(getScrollAmount())}`,
+        pin: true,
+        animation: tween,
+        scrub: 1,
+        invalidateOnRefresh: true,
+        id: "work",
+      });
+
+      return () => {
+        ScrollTrigger.getById("work")?.kill();
+      };
     });
-
-    ScrollTrigger.create({
-      trigger: ".work-section",
-      start: "bottom bottom",
-      end: () => `+=${Math.abs(getScrollAmount())}`,
-      pin: true,
-      animation: tween,
-      scrub: 1,
-      invalidateOnRefresh: true,
-      id: "work",
-    });
-
-    return () => {
-      ScrollTrigger.getById("work")?.kill();
-    };
   }, []);
 
   const projects = [

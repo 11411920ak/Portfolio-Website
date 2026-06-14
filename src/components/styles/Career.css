@@ -179,7 +179,12 @@
     box-sizing: border-box;
   }
   .career-timeline {
-    left: 0%;
+    left: 10px;
+    transform: translateX(0);
+  }
+  .career-dot {
+    left: 11px;
+    transform: translate(-50%, 50%);
   }
   .career-container {
     width: calc(100% - 25px);

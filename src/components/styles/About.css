@@ -24,9 +24,9 @@
 }
 
 .about-me p {
-  font-size: 33px;
+  font-size: 20px;
   font-weight: 600;
-  line-height: 36px;
+  line-height: 26px;
   letter-spacing: 1px;
 }
 
@@ -40,6 +40,10 @@
     width: 500px;
     max-width: calc(100% - 70px);
     transform: translateY(0%);
+  }
+  .about-me p {
+    font-size: 33px;
+    line-height: 36px;
   }
   .about-section {
     opacity: 1;
