@@ -8,7 +8,8 @@
 }
 .work-section {
   transition: 0s;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   box-sizing: border-box;
   will-change: transform;
 }

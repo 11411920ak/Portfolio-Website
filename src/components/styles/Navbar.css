@@ -81,3 +81,16 @@
     font-size: 18px;
   }
 }
+
+.logo-short {
+  display: inline;
+}
+.logo-full {
+  display: none;
+}
+.navbar-title:hover .logo-short {
+  display: none;
+}
+.navbar-title:hover .logo-full {
+  display: inline;
+}

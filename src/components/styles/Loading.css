@@ -2,12 +2,20 @@
   position: fixed;
   width: 100vw;
   height: var(--vh);
-  /* background-image: linear-gradient(#cbb1ff, #d8c4ff); */
-  background-color: #eae5ec;
+  background: linear-gradient(-45deg, #1e003a, #7a00ff, #00d2ff, #ff007b);
+  background-size: 400% 400%;
+  animation: fluidBackground 10s ease infinite;
   z-index: 999999999;
   display: flex;
   place-items: center;
   justify-content: center;
+  perspective: 1000px;
+}
+
+@keyframes fluidBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 .loading-button {
   padding: 20px 50px;
@@ -191,7 +199,7 @@
   left: 50%;
   transform: translateX(-50%);
   top: 0;
-  color: var(--backgroundColor);
+  color: #ffffff;
 }
 .loader-title {
   font-weight: 700;
@@ -277,31 +285,48 @@
   transform: translateY(10px);
   animation-timing-function: cubic-bezier(0.3, 1.18, 0.63, 1.28);
 }
-.loading-marquee {
+.bouncing-text-container {
   position: absolute;
   top: 50%;
-  left: 0;
-  width: 100%;
-  transform: translateY(-50%);
-  color: var(--backgroundColor);
-  font-size: 60px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-.loading-marquee span {
-  padding: 0px 50px;
-  position: relative;
-}
-.loading-marquee span::before {
-  content: "";
-  width: 20px;
-  height: 20px;
-  background-color: var(--backgroundColor);
-  position: absolute;
-  top: 50%;
-  border-radius: 50px;
-  left: 0px;
+  left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 25vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bouncing-text {
+  font-size: 8vw;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 
+    0 1px 0 #cccccc, 
+    0 2px 0 #c9c9c9, 
+    0 3px 0 #bbbbbb, 
+    0 4px 0 #b9b9b9, 
+    0 5px 0 #aaaaaa, 
+    0 6px 1px rgba(0,0,0,.1), 
+    0 0 5px rgba(0,0,0,.1), 
+    0 1px 3px rgba(0,0,0,.3), 
+    0 3px 5px rgba(0,0,0,.2), 
+    0 5px 10px rgba(0,0,0,.25), 
+    0 10px 10px rgba(0,0,0,.2), 
+    0 20px 20px rgba(0,0,0,.15);
+  animation: dropBounce 2.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) infinite alternate;
+  text-align: center;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+@keyframes dropBounce {
+  0% { transform: translateY(-40vh); }
+  100% { transform: translateY(0); }
 }
 @keyframes ball25 {
   0% {

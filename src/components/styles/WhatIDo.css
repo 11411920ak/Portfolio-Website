@@ -34,7 +34,7 @@
 }
 .what-box-in {
   flex-direction: column;
-  height: 500px;
+  height: 600px;
   margin-left: 200px;
   position: relative;
   display: none;
@@ -213,7 +213,7 @@
   opacity: 0.5;
   font-size: 12px;
   letter-spacing: 1px;
-  font-family: "Geist", sans-serif;
+  font-family: "Inter", sans-serif;
   margin-bottom: 5px;
 }
 @keyframes whatBorders {
@@ -249,7 +249,7 @@
     margin-right: 20%;
   }
   .what-box-in {
-    height: 400px;
+    height: 480px;
   }
   .what-content h3 {
     font-size: 28px;
@@ -290,7 +290,7 @@
     padding-bottom: 50px;
   }
   .what-box-in {
-    height: 500px;
+    height: 550px;
     margin-left: -50px;
   }
   .what-content {
@@ -326,7 +326,7 @@
     justify-content: left;
   }
   .what-box:last-child {
-    height: 500px;
+    height: 550px;
   }
   .what-box {
     width: 500px;
@@ -338,7 +338,7 @@
   }
   .what-box-in {
     margin-left: 0px;
-    height: 450px;
+    height: 500px;
   }
   .what-content h5,
   .what-content-flex {
