@@ -61,7 +61,7 @@ const Work = () => {
       image: "https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "LokalJob",
+      title: "LocalJob",
       category: "Local Job Board for Skilled Workers",
       description: "A MERN-stack platform connecting customers with verified local workers (electricians, plumbers, carpenters) in real time. Features geolocation-based matching, Socket.io live chat, a review system, and Razorpay secure in-app payments.",
       tools: "React, Vite, Tailwind, Node.js, Express, MongoDB, Socket.io, Razorpay, Google Maps API",
