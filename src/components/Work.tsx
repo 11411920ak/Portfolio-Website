@@ -106,7 +106,7 @@ const Work = () => {
                     href={project.link} 
                     target="_blank" 
                     rel="noreferrer"
-                    className="live-demo-btn"
+                    className="live-Link-btn"
                     style={{
                       display: "inline-flex",
                       alignItems: "center",
