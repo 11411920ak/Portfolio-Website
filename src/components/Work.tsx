@@ -61,12 +61,12 @@ const Work = () => {
       image: "https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Local Jobs Platform",
-      category: "MERN Stack Marketplace",
-      description: "Millions of skilled tradespeople — electricians, plumbers, carpenters, tutors — struggle to find local work, while customers waste hours searching for trusted help. Local Jobs Platform bridges that gap with a location-aware marketplace that instantly matches verified workers with nearby customers. Customers post jobs, workers apply, and both parties move through a structured workflow from acceptance to completion — backed by secure payments and community-driven ratings that build real trust.",
-      tools: "MongoDB, Express.js, React.js, Node.js, Socket.io, Google Maps API, Razorpay, JWT, Tailwind CSS",
+      title: "LokalJob",
+      category: "Local Job Board for Skilled Workers",
+      description: "A MERN-stack platform connecting customers with verified local workers (electricians, plumbers, carpenters) in real time. Features geolocation-based matching, Socket.io live chat, a review system, and Razorpay secure in-app payments.",
+      tools: "React, Vite, Tailwind, Node.js, Express, MongoDB, Socket.io, Razorpay, Google Maps API",
       link: "https://local-jobs-platform.vercel.app/",
-      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80"
+      image: "/lokaljob_workers.png"
     },
     {
       title: "Personal Portfolio Website",
