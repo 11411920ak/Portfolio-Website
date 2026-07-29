@@ -53,12 +53,12 @@ const Work = () => {
 
   const projects = [
     {
-      title: "Resonance",
-      category: "AI Voice Platform",
-      description: "Built an AI-powered voice platform that enables zero-shot voice cloning and speech synthesis. Optimized cloud storage and GPU-based processing.",
-      tools: "Next.js, React, Prisma, Cloudflare, Modal",
-      link: "#",
-      image: "https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&w=800&q=80"
+      title: "Smart Attendance",
+      category: "QR-Based Attendance System with Anti-Fraud Location Checks",
+      description: "Teachers generate a session QR valid for only 5 minutes, tied to their exact location. Students scan to mark attendance — rejected unless within 80 meters (Haversine GPS check) and blocks duplicate device scans to prevent proxy attendance.",
+      tools: "Hono, TypeScript, TailwindCSS, Cloudflare D1, Cloudflare Pages, QRCode.js, html5-qrcode",
+      link: "https://attendance-system-bn8.pages.dev",
+      image: "/smart_attendance_qr.png"
     },
     {
       title: "LocalJob",
