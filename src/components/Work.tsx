@@ -121,7 +121,7 @@ const Work = () => {
                       fontSize: "14px"
                     }}
                   >
-                    Live Demo <MdArrowOutward />
+                    Live Link <MdArrowOutward />
                   </a>
                 </div>
               </div>
